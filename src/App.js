@@ -5,13 +5,33 @@ import Content from "./components/Content";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      subject: {
+        title: "WEB",
+        sub: "world wide web!!",
+      },
+      content: {
+        title: "HTML",
+        desc: "HTML is HyperText Markup Language.",
+      },
+    };
+  }
+
   render() {
     return (
       <div>
-        <Subject title="WEB" sub="world wide web!!" />
-        <Subject title="React" sub="For UI" />
+        <Subject
+          title={this.state.subject.title}
+          sub={this.state.subject.sub}
+        />
         <TOC />
-        <Content title="HTML" desc="HTML is HyperText Markup Language." />
+        <Content
+          title={this.state.content.title}
+          desc={this.state.content.desc}
+        />
       </div>
     );
   }
