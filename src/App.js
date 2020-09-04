@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      mode: "welcome",
+      mode: "read",
       subject: {
         title: "WEB",
         sub: "world wide web!!",
@@ -49,7 +49,12 @@ class App extends Component {
             });
           }.bind(this)}
         />
-        <TOC data={this.state.contents} />
+        <TOC
+          onChangePage={function () {
+            this.setState({ mode: "read" });
+          }.bind(this)}
+          data={this.state.contents}
+        />
         <Content title={_title} desc={_desc} />
       </div>
     );
