@@ -36,6 +36,8 @@ class App extends Component {
       _desc = this.state.contents[0].desc;
     }
 
+    console.log("render", this);
+
     return (
       <div>
         {/* <Subject
