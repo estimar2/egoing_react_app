@@ -54,12 +54,12 @@ class App extends Component {
             });
           }.bind(this)}
         />
-        {this.getContent()}
+        {this._getContent()}
       </div>
     );
   }
 
-  getReadContent() {
+  _getReadContent() {
     var i = 0;
     while (i < this.state.contents.length) {
       var data = this.state.contents[i];
@@ -72,7 +72,7 @@ class App extends Component {
     }
   }
 
-  getContent() {
+  _getContent() {
     console.log("APP render");
 
     var _title,
@@ -119,7 +119,7 @@ class App extends Component {
         />
       );
     } else if (this.state.mode === "update") {
-      _content = this.getReadContent();
+      _content = this._getReadContent();
       _article = (
         <UpdateContent
           data={_content}
