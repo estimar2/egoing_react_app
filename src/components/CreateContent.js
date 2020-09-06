@@ -11,14 +11,15 @@ class CreateContent extends Component {
           method="post"
           onSubmit={function (e) {
             e.preventDefault();
-            alert("submit");
+
+            this.props.onSubmit(e.target.title.value, e.target.desc.value);
           }.bind(this)}
         >
           <p>
             <input type="text" name="title" placeholder="title" />
           </p>
           <p>
-            <textarea nem="desc" placeholder="description" />
+            <textarea name="desc" placeholder="description" />
           </p>
           <p>
             <input type="submit" value="submit" />
