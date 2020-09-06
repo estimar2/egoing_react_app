@@ -6,7 +6,24 @@ class CreateContent extends Component {
     return (
       <article>
         <h2>Create</h2>
-        <form></form>
+        <form
+          action={"/create_process"}
+          method="post"
+          onSubmit={function (e) {
+            e.preventDefault();
+            alert("submit");
+          }.bind(this)}
+        >
+          <p>
+            <input type="text" name="title" placeholder="title" />
+          </p>
+          <p>
+            <textarea nem="desc" placeholder="description" />
+          </p>
+          <p>
+            <input type="submit" value="submit" />
+          </p>
+        </form>
       </article>
     );
   }
