@@ -10,6 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.max_content_id = 3;
+
     this.state = {
       mode: "create",
       selected_content_id: 2,
@@ -55,7 +57,23 @@ class App extends Component {
         <CreateContent
           onSubmit={function (_title, _desc) {
             // add content to this.state.contents
-            console.log(_title, _desc);
+            this.max_content_id = this.max_content_id + 1;
+
+            // this.state.contents.push({
+            //   id: this.max_content_id,
+            //   title: _title,
+            //   desc: _desc,
+            // });
+
+            var _contents = this.state.contents.concat({
+              id: this.max_content_id,
+              title: _title,
+              desc: _desc,
+            });
+
+            this.setState({
+              contents: _contents,
+            });
           }.bind(this)}
         />
       );
